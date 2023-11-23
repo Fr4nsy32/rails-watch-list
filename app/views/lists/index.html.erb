@@ -1,0 +1,15 @@
+<div class="row">
+<% @lists.each do |list| %>
+<div class="col-6">
+<div class="card" style="width: 18rem;">
+  <%# <%= image_tag movie.poster_url, alt: movie.title, class: "card-img-top" %>
+  <img src="https://source.unsplash.com/random/200x200" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= list.name %></h5>
+    <%= link_to "See list", list_path(list),class: "btn btn-primary" %>
+  </div>
+</div>
+</div>
+<% end %>
+<%= link_to "New list", new_list_path, class: "btn btn-primary" %>
+</div>
