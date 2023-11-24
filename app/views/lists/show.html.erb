@@ -16,7 +16,7 @@
 <div class="col-lg-6 col-sm-12">
   <div class="card-product">
   <%= image_tag bookmark.movie['poster_url'], alt: bookmark.movie['title'] %>
-  <div class="card-product-infos">
+  <div class="card-product-infos scroll">
     <h2><%= bookmark.movie['title'] %> - <%= bookmark.movie['rating'] %></h2>
     <h4> <%= bookmark.comment %> </h4>
     <p> <strong>Overview:</strong> <%= bookmark.movie['overview'] %></p>
