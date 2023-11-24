@@ -1,18 +1,5 @@
 <div class="row">
 <% @lists.each do |list| %>
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @article.photo.key, height: 300, crop: :fill %>')">
-  Breakfast
-</div>
-<div class="col-6">
-<div class="card" style="width: 18rem;">
-  <%# <img src="https://source.unsplash.com/random/200x200" class="card-img-top" alt="..."> %>
-  <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
-  <div class="card-body">
-    <h5 class="card-title"><%= list.name %></h5>
-    <%= link_to "See list", list_path(list),class: "btn btn-primary" %>
-  </div>
-</div>
-</div>
-<% end %>
-<%= link_to "New list", new_list_path, class: "btn btn-primary" %>
+  <%= list.name %>
 </div>
