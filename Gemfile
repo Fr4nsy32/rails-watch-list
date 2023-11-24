@@ -15,6 +15,8 @@ gem "font-awesome-sass", "~> 6.1"
 gem "simple_form"
 gem "sassc-rails"
 gem "faker"
+
+gem "dotenv-rails"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
