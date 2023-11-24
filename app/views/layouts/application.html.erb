@@ -11,7 +11,19 @@
   </head>
 
   <body>
-    <div class="container">
+   <nav class="navbar sticky-top navbar-light navbar-lewagon">
+    <div class="container-fluid">
+    <%= link_to root_path, class: "navbar-brand" do %>
+    <i class="fa-solid fa-clapperboard"></i>
+    <% end %>
+    <%= link_to new_list_path do %>
+    <button type="button" class="btn-ghost">Create a new list
+    <i class="fa-solid fa-circle-plus" style="color: #f7e400;"></i>
+    </button>
+    <% end %>
+  </div>
+    </nav>
+  <div class="container">
     <%= yield %>
     </div>
   </body>

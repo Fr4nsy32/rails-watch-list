@@ -1,20 +1,26 @@
-<p style="color: green"><%= notice %></p>
+<% if notice  %>
+<div class="flash flash-success alert alert-dismissible fade show" role="alert">
+  <span><%= notice %></span>
+  <a data-bs-dismiss="alert" aria-label="Close">
+    <i class="fas fa-times"></i>
+  </a>
+</div>
+<% end %>
 
 <h1><%= @list.name %></h1>
 <%= link_to "Create Bookmark",  new_list_bookmark_path(@list), class: "btn btn-primary" %>
 <%= link_to "Go back to lists", lists_path, class: "btn btn-primary" %>
 
 <div class="row">
-<% @list.bookmarks.each do |bookmark|%>
-<div class="col-6 w-100vh">
-<div class="card" style="width: 18rem;">
-  <%= image_tag bookmark.movie['poster_url'], alt: bookmark.movie['title'], class: "card-img-top" %>
-  <div class="card-body">
-    <h5 class="card-title"><%= bookmark.movie['title'] %></h5>
-    <p class ="card-text fw-bold"><%= bookmark.comment %></p>
-    <p class="card-text"><%= bookmark.movie['overview'] %></p>
-    <p class="card-text"><%= bookmark.movie['rating'] %></p>
-    <%= link_to bookmark_path(bookmark),
+<% @list.bookmarks.each do |bookmark| %>
+<div class="col-6">
+  <div class="card-product">
+  <%= image_tag bookmark.movie['poster_url'], alt: bookmark.movie['title'] %>
+  <div class="card-product-infos">
+    <h2><%= bookmark.movie['title'] %> - <%= bookmark.movie['rating'] %></h2>
+    <h4> <%= bookmark.comment %> </h4>
+    <p> <strong>Overview:</strong> <%= bookmark.movie['overview'] %></p>
+      <%= link_to bookmark_path(bookmark),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
     <i class="fa-solid fa-trash"></i>
     <% end %>
