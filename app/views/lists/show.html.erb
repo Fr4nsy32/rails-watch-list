@@ -13,7 +13,7 @@
 
 <div class="row">
 <% @list.bookmarks.each do |bookmark| %>
-<div class="col-lg-6 col-sm-6">
+<div class="col-lg-6 col-sm-12">
   <div class="card-product">
   <%= image_tag bookmark.movie['poster_url'], alt: bookmark.movie['title'] %>
   <div class="card-product-infos">
