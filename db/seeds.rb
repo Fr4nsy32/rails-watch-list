@@ -11,10 +11,10 @@
 require 'rest-client'
 require 'json'
 require 'faker'
-puts 'Cleaning database..'
-List.destroy_all
-Movie.destroy_all
-Bookmark.destroy_all
+# puts 'Cleaning database..'
+# List.destroy_all
+# Movie.destroy_all
+# Bookmark.destroy_all
 
 url = 'https://tmdb.lewagon.com/movie/top_rated'
 response = RestClient.get(url)
@@ -25,15 +25,15 @@ parse['results'].each do |result|
   puts "Created #{result['title']}"
 end
 
-puts "Creating list.."
+# puts "Creating list.."
 
-List.create!(name: "classic")
-List.create!(name: "drama")
+# List.create!(name: "classic")
+# List.create!(name: "drama")
 
-List.all.each do |list|
-  3.times do
-    puts "Creating bookmarks.."
-    Bookmark.create!(comment: "This movie was added to a list", movie_id: Movie.all.ids.sample, list_id: list.id )
-    puts "Bookmarks created!"
-  end
-end
+# List.all.each do |list|
+#   3.times do
+#     puts "Creating bookmarks.."
+#     Bookmark.create!(comment: "This movie was added to a list", movie_id: Movie.all.ids.sample, list_id: list.id )
+#     puts "Bookmarks created!"
+#   end
+# end
