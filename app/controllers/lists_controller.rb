@@ -13,6 +13,7 @@ class ListsController < ApplicationController
   end
 
   def create
+    raise
     @list = List.new(list_params)
     if @list.save
       redirect_to @list, notice: "List was added was successfully created."
