@@ -14,6 +14,7 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
+    @list.photo.attach(list_params)
     if @list.save
       redirect_to @list, notice: "List was added was successfully created."
     else

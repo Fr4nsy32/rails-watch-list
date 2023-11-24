@@ -2,7 +2,6 @@
 <% @lists.each do |list| %>
 <div class="col-6">
 <div class="card" style="width: 18rem;">
-  <%# <%= image_tag movie.poster_url, alt: movie.title, class: "card-img-top" %>
   <%# <img src="https://source.unsplash.com/random/200x200" class="card-img-top" alt="..."> %>
   <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
   <div class="card-body">
